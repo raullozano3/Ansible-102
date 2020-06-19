@@ -1,0 +1,21 @@
+---
+  - name: "grab information from boxes"
+    hosts: all
+    connection: local
+    vars:
+      ansible_python_interpreter: /home/packetferret/.virtualenv/ansible/bin/python
+    roles:
+      - juniper.junos
+    tasks:
+      - name: "Grab facts and store as files in files/ directory"
+        juniper_junos_facts:
+          savedir: "files/"
+          config_format: "set"
+          provider:
+            user: "automation"
+            passwd: "juniper123"
+        register: result
+      
+      - name: "Print configuration in yucky XML"
+        debug:
+          var: result.ansible_facts.junos.config
