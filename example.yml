@@ -2,8 +2,6 @@
   - name: "grab information from boxes"
     hosts: all
     connection: local
-    vars:
-      ansible_python_interpreter: /home/packetferret/.virtualenv/ansible/bin/python
     roles:
       - juniper.junos
     tasks:
