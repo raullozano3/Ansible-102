@@ -9,9 +9,6 @@
         juniper_junos_facts:
           savedir: "files/"
           config_format: "set"
-          provider:
-            user: "automation"
-            passwd: "juniper123"
         register: result
       
       - name: "Print configuration in yucky XML"
