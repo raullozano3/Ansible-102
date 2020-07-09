@@ -13,4 +13,4 @@
       
       - name: "Print configuration in yucky XML"
         debug:
-          var: result.ansible_facts.junos.config
+          var: result
